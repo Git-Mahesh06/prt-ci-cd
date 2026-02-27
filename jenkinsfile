@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Clone Repo') {
+            steps {
+                git 'https://github.com/your-username/prt-cicd-project.git'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t prt-app:latest .'
+            }
+        }
+
+        stage('Verify Image') {
+            steps {
+                sh 'docker run -d -p 8081:80 prt-app:latest'
+            }
+        }
+    }
+}
