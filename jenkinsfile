@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/your-username/prt-cicd-project.git'
+                git 'https://github.com/Git-Mahesh06/prt-ci-cd.git'
             }
         }
 
