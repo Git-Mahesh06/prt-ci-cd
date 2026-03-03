@@ -3,19 +3,19 @@ pipeline {
 
     stages {
 
-        stage('Clone Repo') {
+        stage('job1-test') {
             steps {
                 git 'https://github.com/Git-Mahesh06/prt-ci-cd.git'
             }
         }
 
-        stage('Build Docker Image') {
+        stage('job2-build') {
             steps {
                 sh 'docker build -t prt-app:latest .'
             }
         }
 
-        stage('Verify Image') {
+        stage('job3-prod') {
             steps {
                 sh 'docker run -d -p 8081:80 prt-app:latest'
             }
