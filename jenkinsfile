@@ -2,13 +2,7 @@ pipeline {
     agent any
 
     stages {
-
-        stage('job1-test') {
-            steps {
-                git 'https://github.com/Git-Mahesh06/prt-ci-cd.git'
-            }
-        }
-
+        
         stage('job2-build') {
             steps {
                 sh 'docker build -t prt-app:latest .'
